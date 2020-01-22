@@ -29,8 +29,17 @@ public class MainActivity extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "необходимое сообщение", Toast.LENGTH_LONG).show();
+                if (mBankCardChkBx.isChecked()){
+                    Toast.makeText(MainActivity.this, "Оплата с банковской карты осуществлена", Toast.LENGTH_LONG).show();
+                }
+                if (mMobilePhoneChkBx.isChecked()){
+                    Toast.makeText(MainActivity.this, "Оплата с мобильного телефона осуществлена", Toast.LENGTH_LONG).show();
+                }
+                if (mCashAddressChkBx.isChecked()){
+                    Toast.makeText(MainActivity.this, "Оплата с карты осуществлена", Toast.LENGTH_LONG).show();
+                }
             }
+
         });
     }
     private void initViews(){
